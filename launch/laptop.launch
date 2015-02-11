@@ -1,0 +1,40 @@
+<launch>
+	<!-- nodes to launch first -->
+	<node name="trs_openni2Camera_node" pkg="openni2_camera" type="openni2_camera_node" respawn="true"/>
+	
+	<!-- serial nodes -->
+	<node name="trs_masterMbed_node" pkg="trs_serial" type="trs_masterMbed" respawn="true"/>
+	<!--node name="trs_arduino_node" pkg="trs_serial" type="trs_arduino" respawn="true"/-->
+	<node name="trs_arduinoPixy_node" pkg="trs_serial" type="trs_arduinoPixy" respawn="true"/>
+	<!--node name="imu_node" pkg="razor_imu_9dof" type="node.py" respawn="true"/-->	
+
+	<!-- control nodes -->
+	<node name="trs_commandBuilder_node" pkg="trs_control" type="trs_commandBuilder" respawn="true"/>
+	<!--node name="trs_tabletCommand_node" pkg="trs_control" type="trs_tabletCommand" respawn="true"/-->
+	<node name="trs_basicControl_node" pkg="trs_control" type="trs_basicControl" respawn="true"/>	
+	<node name="trs_handshake_node" pkg="trs_control" type="trs_handshake" respawn="true"/>	
+	<node name="trs_faceTracking_node" pkg="trs_control" type="trs_faceTracking" respawn="true"/>
+	<!--node name="trs_objectTracking_node" pkg="trs_control" type="trs_objectTracking" respawn="true"/-->
+	<node name="trs_kdtreeAnglesToArms_node" pkg="trs_control" type="trs_kdtreeAnglesToArms" respawn="true"/>
+	<node name="trs_kdtreeObjectToArms_node" pkg="trs_control" type="trs_kdtreeObjectToArms" respawn="true"/>	
+	<!--node name="trs_balanceLegs_node" pkg="trs_control" type="trs_balanceLegs" respawn="true"/-->
+	<node name="trs_randomLegsPlayer_node" pkg="trs_control" type="trs_randomLegsPlayer" respawn="true"/>
+	<node name="trs_conductor_node" pkg="trs_control" type="trs_conductor" respawn="true"/>	
+		
+	<!-- vision nodes -->
+	<include file="$(find trs_vision)/launch/usb_cam-EDS.launch"/>			
+	<!--node name="trs_openniTracker_node" pkg="openni_tracker" type="openni_tracker" respawn="true"/-->
+	<node name="trs_faceRecognition_node" pkg="trs_vision" type="trs_faceRecognition" respawn="true"/>
+	<node name="trs_kinectToAngles_node" pkg="trs_vision" type="trs_kinectToAngles" respawn="true"/> 
+	<node name="trs_structurePixy_node" pkg="trs_vision" type="trs_structurePixy" respawn="true"/> 
+
+	<!-- GUI nodes -->
+	<node name="trs_gui_node" pkg="trs_gui" type="trs_gui" respawn="true"/>	
+	<node name="trs_cvSurfacePro2GUI_node" pkg="trs_vision" type="trs_cvSurfacePro2GUI" respawn="true"/>	
+	<!--node name="trs_rviz_node" pkg="rviz" type="rviz" respawn="true"/-->
+	<!--node name="trs_imgEyeBall_node" pkg="image_view" type="image_view" args="image:=/image/imgEyeBall" respawn="true"/-->	
+	<!--node name="trs_imgDetectedHead_node" pkg="image_view" type="image_view" args="image:=/image/imgDetectedHead" respawn="true"/-->
+	<!--node name="trs_structurePixyMerged_node" pkg="image_view" type="image_view" args="image:=/image/structurePixyMerged" respawn="true"/-->	 
+</launch>
+
+

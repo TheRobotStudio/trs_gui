@@ -1,0 +1,22 @@
+<launch>
+	<node name="trs_serial_node" pkg="trs_serial" type="trs_serial" respawn="true"/>
+	<node name="trs_arduino_node" pkg="trs_serial" type="trs_arduino" respawn="true"/>
+	<node name="cmdBuilder_node" pkg="trs_control" type="cmdBuilder" respawn="true"/>
+	<node name="tabletCmd_node" pkg="trs_control" type="tabletCmd" respawn="true"/>
+	<node name="setCurrent_node" pkg="trs_control" type="setCurrent" respawn="true"/>
+	<node name="randomPlayer_node" pkg="trs_control" type="randomPlayer" respawn="true"/>
+	<node name="handshake_node" pkg="trs_control" type="handshake" respawn="true"/>
+	<node name="vision_node" pkg="trs_vision" type="vision" respawn="true"/>
+	<node name="faceTracking_node" pkg="trs_control" type="faceTracking" respawn="true"/>
+	<node name="kdTreeControl_node" pkg="trs_control" type="kdTreeControl" respawn="true"/>	
+	<node name="trs_gui_node" pkg="trs_gui" type="trs_gui" respawn="true"/>	
+	<include file="$(find trs_vision)/launch/usb_cam-EDS.launch" />
+	<!--node name="wiimote_node" pkg="wiimote" type="wiimote_node.py" respawn="true"/-->	
+	<!--node name="wiimote_node2" pkg="wiimote" type="wiimote_node2.py" respawn="true"/-->
+	<!--node name="wiimote_node" pkg="trs_control" type="wiimote" respawn="true"/-->
+	<node name="trs_openniTracker_node" pkg="openni_tracker" type="openni_tracker" respawn="true"/>
+	<node name="trs_rviz_node" pkg="rviz" type="rviz" respawn="true"/>
+	<node name="trs_tf2angles_node" pkg="trs_kinect" type="kinect_tf_to_angles" respawn="true"/>	
+</launch>
+
+

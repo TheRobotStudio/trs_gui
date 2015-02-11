@@ -1,0 +1,12 @@
+<launch>
+	<node name="serial" pkg="trs_serial" type="trs_serial" respawn="true"/>
+	<node name="arduino" pkg="trs_serial" type="trs_arduino" respawn="true"/>
+	<node name="command_builder" pkg="trs_control" type="cmdBuilder" respawn="true"/>
+	<node name="tablet" pkg="trs_control" type="tabletCmd" respawn="true"/>
+	<node name="current_mode" pkg="trs_control" type="setCurrent" respawn="true"/>
+	<node name="handshake" pkg="trs_control" type="handshake" respawn="true"/>
+	<node name="vision_node" pkg="trs_vision" type="vision" respawn="true"/>
+	<node name="face_track" pkg="trs_control" type="faceTracking" respawn="true"/>
+	<node name="kdtree" pkg="trs_control" type="kdTreeControl" respawn="true"/>
+	<node name="gui" pkg="trs_gui" type="trs_gui" respawn="true"/>
+</launch>

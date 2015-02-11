@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/icon.png</file>
+        <file>images/current_off.png</file>
+        <file>images/current_on.png</file>
+        <file>images/kinect_off.png</file>
+        <file>images/kinect_on.png</file>
+        <file>images/shake_off.png</file>
+        <file>images/shake_on.png</file>
+        <file>images/vision_off.png</file>
+        <file>images/vision_on.png</file>
+	<file>images/wii_on.png</file>
+	<file>images/wii_off.png</file>
+	<file>images/legs_0ma.png</file>
+	<file>images/legs_100ma.png</file>
+	<file>images/legs_200ma.png</file>
+	<file>images/legs_300ma.png</file>
+	<file>images/balance_on.png</file>
+	<file>images/balance_off.png</file>
+	<file>images/tablet_on.png</file>
+	<file>images/tablet_off.png</file>
+	<file>images/ros.png</file>
+    </qresource>
+</RCC>

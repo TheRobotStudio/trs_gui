@@ -1,0 +1,5 @@
+<launch>
+	<node name="trs_openniTracker_node" pkg="openni_tracker" type="openni_tracker" />
+	<!--node name="trs_rviz_node" pkg="rviz" type="rviz" /-->
+	<node name="trs_tf2angles_node" pkg="trs_kinect" type="kinect_tf_to_angles" />
+</launch>
